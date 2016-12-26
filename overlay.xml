@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories version="1.0">
+	<repo priority="50" status="unofficial">
+		<name>faforever</name>
+		<description>Community client for Supreme Commander: Forged Alliance</description>
+		<homepage>http://faforever.com</homepage>
+		<owner>
+			<email>ikotrasinsk@gmail.com</email>
+			<name>Igor Kotrasiński</name>
+		</owner>
+		<source type="git">git://github.com/Wesmania/faforever.git</source>
+		<feed>https://github.com/Wesmania/faforever/commits/master.atom</feed>
+	</repo>
+</repositories>

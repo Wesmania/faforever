@@ -5,7 +5,7 @@
 EAPI=5
 
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_5 )
 
 inherit distutils-r1 git-r3
 

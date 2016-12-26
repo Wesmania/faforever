@@ -16,7 +16,7 @@ EGIT_COMMIT="fe407cf7901f43f176428b067a3d887906ebe292"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~hppa ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="

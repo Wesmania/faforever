@@ -69,5 +69,5 @@ src_install() {
 
 	echo ${PV} > res/RELEASE-VERSION
 	insinto /usr/share/fafclient
-	doins res/*
+	doins -r res/*
 }

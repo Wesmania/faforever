@@ -33,7 +33,7 @@ RDEPEND="
 	virtual/python-pathlib[${PYTHON_USEDEP}]
 	dev-python/ipaddress[${PYTHON_USEDEP}]
 	dev-python/py[${PYTHON_USEDEP}]
-	dev-python/dateutil[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/trueskill[${PYTHON_USEDEP}]
 

@@ -48,10 +48,26 @@ src_prepare() {
 	rm -rf "${S}/tests"
 }
 
+python_compile() {
+	FAFCLIENT_VERSION=${PV} distutils-r1_python_compile
+}
+
+python_install() {
+	FAFCLIENT_VERSION=${PV} distutils-r1_python_install --optimize=1
+}
+
 pkg_postinst() {
 	if ! has_version "app-emulation/wine" ; then
 		elog "You need app-emulation/wine to run the game itself."
 		elog "You will still be able to chat and install mods/maps,"
 		elog "but you won't be able to join or host games."
 	fi
+}
+
+src_install() {
+	distutils-r1_src_install
+
+	echo ${PV} > res/RELEASE-VERSION
+	insinto /usr/share/fafclient
+	doins res/*
 }

@@ -29,5 +29,5 @@ python_compile() {
 	else
 		LUPA_FLAGS=""
 	fi
-	distutils-r1_python_compile "$LUPA_FLAGS"
+	distutils-r1_python_compile $LUPA_FLAGS
 }

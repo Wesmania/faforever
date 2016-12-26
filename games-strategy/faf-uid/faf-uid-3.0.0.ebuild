@@ -18,8 +18,8 @@ RDEPEND="x11-apps/xrandr sys-apps/pciutils sys-apps/util-linux sys-apps/coreutil
 DEPEND=""
 
 src_unpack() {
-	mkdir -p "${S}"
-	cp "${A}" "${S}"
+	mkdir -p ${S}
+	cp ${A} ${S}
 }
 
 src_install() {

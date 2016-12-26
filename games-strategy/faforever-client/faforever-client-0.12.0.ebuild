@@ -25,7 +25,7 @@ RDEPEND="
 	=games-strategy/faftools-0.12[${PYTHON_USEDEP}]
 	>=games-strategy/faf-uid-3.0.0
 
-	dev-python/bsdiff[${PYTHON_USEDEP}]
+	dev-python/bsdiff4[${PYTHON_USEDEP}]
 	dev-python/enum34[${PYTHON_USEDEP}]
 	dev-python/lupa[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]

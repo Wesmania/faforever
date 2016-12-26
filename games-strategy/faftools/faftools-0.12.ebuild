@@ -30,3 +30,9 @@ RDEPEND="
 	dev-python/werkzeug[${PYTHON_USEDEP}]
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+
+src_prepare() {
+	# No need to build tests
+	# FIXME - should it be dealt with more gracefully?
+	rm -rf "${S}/tests"
+}

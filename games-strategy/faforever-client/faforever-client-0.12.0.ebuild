@@ -46,6 +46,9 @@ src_prepare() {
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?
 	rm -rf "${S}/tests"
+
+	# This is the name used in site-packages
+	mv "${S}/src" "${S}/fafclient"
 }
 
 python_compile() {

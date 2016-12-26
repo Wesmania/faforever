@@ -20,7 +20,7 @@ IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
 pkg_postinst() {
-	if ! has_version "dev-python/dateutil" ; then
-		elog "For robust datetime serialization, install dev-python/dateutil."
+	if ! has_version "dev-python/python-dateutil" ; then
+		elog "For robust datetime serialization, install dev-python/python-dateutil."
 	fi
 }

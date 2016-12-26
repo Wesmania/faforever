@@ -14,7 +14,12 @@ KEYWORDS="~amd64"
 IUSE=""
 
 # Used to generate the UID
-RDEPEND="x11-apps/xrandr sys-apps/pciutils sys-apps/util-linux sys-apps/coreutils"
+# Need util-linux-2.27 for --json option in lsblk
+RDEPEND="
+	x11-apps/xrandr
+	sys-apps/pciutils
+	>=sys-apps/util-linux-2.27
+	sys-apps/coreutils"
 DEPEND=""
 
 src_unpack() {

@@ -9,7 +9,7 @@ Gentoo overlay for Forged Alliance Forever.
 
 ## Running
 
-faforever-client
+`faforever-client`
 
 ## Notes
 - The overlay is working and sane, but I can't guarantee stability. It shouldn't, but possibly might break your Gentoo.

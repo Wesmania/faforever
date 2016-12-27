@@ -25,14 +25,12 @@ index 868a2b1..b16cf45 100644
  if sys.platform == 'win32':
 diff --git a/src/config/path.py b/src/config/path.py
 new file mode 100644
-index 0000000..183f1b3
+index 0000000..28f6326
 --- /dev/null
 +++ b/src/config/path.py
 @@ -0,0 +1,36 @@
 +import os
 +import sys
-+
-+__all__ = [get_workdir, get_resdir]
 +
 +# sed'able for unix to change during installation
 +UNIX_SHARE_PATH = ''
@@ -65,6 +63,8 @@ index 0000000..183f1b3
 +        return os.path.join(get_workdir(), "res")
 +    elif run_from_unix_install():
 +        return get_workdir()
++
++__all__ = [get_workdir, get_resdir]
 diff --git a/src/util/__init__.py b/src/util/__init__.py
 index 1a2276e..5a9e5aa 100644
 --- a/src/util/__init__.py

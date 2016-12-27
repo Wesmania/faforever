@@ -65,6 +65,7 @@ python_compile() {
 python_install() {
 	FAFCLIENT_VERSION=${PV} distutils-r1_python_install --optimize=1
 
+	python_scriptinto /usr/games/bin
 	python_newscript fafclient/__main__.py faforever-client
 }
 

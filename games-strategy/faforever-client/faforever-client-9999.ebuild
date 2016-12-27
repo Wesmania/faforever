@@ -42,9 +42,6 @@ RDEPEND="
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
 src_prepare() {
-
-	epatch "${FILESDIR}"/${P}-scriptify-main.patch
-	
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?
 	rm -rf "${S}/tests"
@@ -60,6 +57,8 @@ python_compile() {
 
 python_install() {
 	FAFCLIENT_VERSION=${PV} distutils-r1_python_install --optimize=1
+
+	python_newscript fafclient/__main__.py faforever-client
 }
 
 pkg_postinst() {

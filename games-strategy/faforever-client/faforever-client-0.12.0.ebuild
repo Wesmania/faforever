@@ -83,6 +83,6 @@ src_install() {
 	distutils-r1_src_install
 
 	echo ${PV} > res/RELEASE-VERSION
-	insinto /usr/share/fafclient
+	insinto ${FAF_WORKDIR}
 	doins -r res/*
 }

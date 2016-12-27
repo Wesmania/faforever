@@ -51,10 +51,10 @@ index 0000000..2e5f1d7
 +    # Are we running from a frozen interpreter?
 +    if run_from_frozen():
 +        return os.path.dirname(sys.executable)
-+    else if run_from_unix_install():
++    elif run_from_unix_install():
 +        # We are on unix and share path was hardcoded
 +        return UNIX_SHARE_PATH
-+    else if run_from_source():
++    elif run_from_source():
 +        # We are most likely running from source
 +        srcDir = os.path.dirname(os.path.relpath(__file__))
 +        return os.path.abspath(os.path.join(srcDir, os.pardir))
@@ -63,7 +63,7 @@ index 0000000..2e5f1d7
 +def get_resdir():
 +    if run_from_frozen() or run_from_source():
 +        return os.path.join(get_workdir(), "res")
-+    else if run_from_unix_install():
++    elif run_from_unix_install():
 +        return get_workdir()
 diff --git a/src/util/__init__.py b/src/util/__init__.py
 index 1a2276e..5a9e5aa 100644

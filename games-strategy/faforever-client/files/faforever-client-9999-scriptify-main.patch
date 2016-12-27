@@ -1,5 +1,5 @@
 diff --git a/src/__main__.py b/src/__main__.py
-index 4fad7bf..e03ba86 100644
+index 4fad7bf..e4909fe 100644
 --- a/src/__main__.py
 +++ b/src/__main__.py
 @@ -1,3 +1,4 @@
@@ -7,7 +7,7 @@ index 4fad7bf..e03ba86 100644
  """
  Created on Dec 1, 2011
  
-@@ -16,6 +17,21 @@ sip.setapi('QProcess', 2)
+@@ -16,6 +17,24 @@ sip.setapi('QProcess', 2)
  import os
  import sys
  
@@ -19,12 +19,15 @@ index 4fad7bf..e03ba86 100644
 +# through the interpreter (e.g. from source).
 +
 +import imp
-+if __package__ is None and not hasattr(sys, 'frozen') and not imp.find_module("client"):
-+    # __main__ executed directly
-+    import os.path
-+    import fafclient
-+    path = os.path.realpath(os.path.abspath(fafclient.__file__))
-+    sys.path.insert(0, os.path.dirname(path))
++if __package__ is None and not hasattr(sys, 'frozen'):
++    try:
++        imp.find_module("client")
++    except ImportError:
++        # __main__ executed directly
++        import os.path
++        import fafclient
++        path = os.path.realpath(os.path.abspath(fafclient.__file__))
++        sys.path.insert(0, os.path.dirname(path))
 +
  if os.path.isdir("lib"):
      sys.path.insert(0, os.path.abspath("lib"))

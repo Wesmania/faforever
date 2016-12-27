@@ -1,8 +1,8 @@
 diff --git a/src/__main__.py b/src/__main__.py
-index af31f13..2cbd7dd 100644
+index 868a2b1..b16cf45 100644
 --- a/src/__main__.py
 +++ b/src/__main__.py
-@@ -44,16 +44,10 @@ from PyQt4 import QtGui, uic
+@@ -47,16 +47,10 @@ from PyQt4 import QtGui, uic
  path = os.path.join(os.path.dirname(sys.argv[0]), "PyQt4.uic.widget-plugins")
  uic.widgetPluginPath.append(path)
  
@@ -25,7 +25,7 @@ index af31f13..2cbd7dd 100644
  if sys.platform == 'win32':
 diff --git a/src/config/path.py b/src/config/path.py
 new file mode 100644
-index 0000000..2e5f1d7
+index 0000000..183f1b3
 --- /dev/null
 +++ b/src/config/path.py
 @@ -0,0 +1,36 @@

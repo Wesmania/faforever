@@ -41,6 +41,12 @@ RDEPEND="
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
+pkg_setup() {
+	distutils-r1_pkg_setup
+	git-r3_pkg_setup
+	export FAF_WORKDIR="/usr/share/games/fafclient"
+}
+
 src_prepare() {
 
 	epatch "${FILESDIR}"/${P}-scriptify-main.patch
@@ -76,6 +82,6 @@ src_install() {
 	distutils-r1_src_install
 
 	echo ${PV} > res/RELEASE-VERSION
-	insinto /usr/share/fafclient
+	insinto ${FAF_WORKDIR}
 	doins -r res/*
 }

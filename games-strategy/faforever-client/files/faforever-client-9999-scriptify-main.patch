@@ -1,5 +1,5 @@
 diff --git a/src/__main__.py b/src/__main__.py
-index 4fad7bf..efcaf38 100644
+index 4fad7bf..e03ba86 100644
 --- a/src/__main__.py
 +++ b/src/__main__.py
 @@ -1,3 +1,4 @@
@@ -7,7 +7,7 @@ index 4fad7bf..efcaf38 100644
  """
  Created on Dec 1, 2011
  
-@@ -16,6 +17,17 @@ sip.setapi('QProcess', 2)
+@@ -16,6 +17,21 @@ sip.setapi('QProcess', 2)
  import os
  import sys
  
@@ -15,7 +15,11 @@ index 4fad7bf..efcaf38 100644
 +# by copying and modifying them. This breaks path to our modules.
 +# This hack restores our path, but really the best way to fix it
 +# would be to convert out imports to relative form.
-+if __package__ is None and not hasattr(sys, 'frozen'):
++# We check if we can import our packages already in case we are run
++# through the interpreter (e.g. from source).
++
++import imp.find_module
++if __package__ is None and not hasattr(sys, 'frozen') and not imp.find_module("client"):
 +    # __main__ executed directly
 +    import os.path
 +    import fafclient

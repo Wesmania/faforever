@@ -22,7 +22,7 @@ IUSE=""
 # TODO - figure out if we need pulseaudio/apulse
 # TODO - figure out if we need use flags from PyQt4
 RDEPEND="
-	=games-strategy/faftools-0.12.0[${PYTHON_USEDEP}]
+	=games-strategy/faftools-0.12.0_pre2[${PYTHON_USEDEP}]
 	>=games-strategy/faf-uid-3.0.0
 
 	dev-python/bsdiff4[${PYTHON_USEDEP}]

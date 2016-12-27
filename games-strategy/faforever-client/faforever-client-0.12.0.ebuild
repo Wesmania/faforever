@@ -42,13 +42,20 @@ RDEPEND="
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
+FAF_WORKDIR="/usr/share/games/fafclient"
+
 src_prepare() {
 
 	epatch "${FILESDIR}"/${P}-scriptify-main.patch
+	epatch "${FILESDIR}"/${P}-hardcodable-workdir.patch
+	epatch "${FILESDIR}"/${P}-skip-lib-in-path.patch
 
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?
 	rm -rf "${S}/tests"
+
+	# Hardcode the proper workdir
+	sed -i '' "s/UNIX_WORKDIR = \"\"/UNIX_WORKDIR=\"${FAF_WORKDIR}\"/" "${S}/src/__main__.py" || die
 
 	# This is the name used in site-packages
 	mv "${S}/src" "${S}/fafclient"

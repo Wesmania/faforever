@@ -1,0 +1,23 @@
+diff --git a/src/__main__.py b/src/__main__.py
+index cc9f53a..4c6c70f 100644
+--- a/src/__main__.py
++++ b/src/__main__.py
+@@ -34,6 +34,9 @@ from PyQt4 import QtGui, uic
+ path = os.path.join(os.path.dirname(sys.argv[0]), "PyQt4.uic.widget-plugins")
+ uic.widgetPluginPath.append(path)
+ 
++# FIXME - intended to be sed'ed by unix install scripts
++UNIX_WORKDIR = ""
++
+ # Are we running from a frozen interpreter?
+ if getattr(sys, 'frozen', False):
+     os.chdir(os.path.dirname(sys.executable))
+@@ -44,6 +47,8 @@ else:
+         devRoot = os.path.abspath(os.path.join(srcDir, os.pardir))
+         os.chdir(devRoot)
+         # We need to set the working directory correctly.
++    else:
++        os.chdir(UNIX_WORKDIR)
+ 
+ import util
+ if sys.platform == 'win32':

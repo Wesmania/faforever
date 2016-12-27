@@ -86,7 +86,8 @@ pkg_postinst() {
 src_install() {
 	distutils-r1_src_install
 
-	echo ${PV} > res/RELEASE-VERSION
+	# FIXME - work out consistent version naming with upstream
+	echo ${EGIT_COMMIT} > res/RELEASE-VERSION
 	insinto ${FAF_WORKDIR}
 	doins -r res/*
 }

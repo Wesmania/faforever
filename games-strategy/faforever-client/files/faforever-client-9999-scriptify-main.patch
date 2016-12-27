@@ -1,0 +1,12 @@
+diff --git a/src/__main__.py b/src/__main__.py
+index 4fad7bf..bcc7c02 100644
+--- a/src/__main__.py
++++ b/src/__main__.py
+@@ -4,6 +4,7 @@ Created on Dec 1, 2011
+ @author: thygrrr
+ """
+ 
++#!/usr/bin/env python2
+ # CRUCIAL: This must remain on top.
+ import sip
+ 

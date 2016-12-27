@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/FAForever/faftools.git"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~hppa ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="-*"
 IUSE=""
 
 RDEPEND="

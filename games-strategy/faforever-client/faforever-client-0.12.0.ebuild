@@ -43,6 +43,9 @@ RDEPEND="
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
 src_prepare() {
+
+	epatch "${FILESDIR}"/${P}-scriptify-main.patch
+
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?
 	rm -rf "${S}/tests"

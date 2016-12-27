@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://github.com/FAForever/client.git"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64"
+KEYWORDS="-*"
 IUSE=""
 
 # TODO - figure out if we need pulseaudio/apulse

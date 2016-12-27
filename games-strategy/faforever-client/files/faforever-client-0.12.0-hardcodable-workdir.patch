@@ -1,23 +1,37 @@
 diff --git a/src/__main__.py b/src/__main__.py
-index cc9f53a..4c6c70f 100644
+index ba702f7..3e495d3 100644
 --- a/src/__main__.py
 +++ b/src/__main__.py
-@@ -34,6 +34,9 @@ from PyQt4 import QtGui, uic
- path = os.path.join(os.path.dirname(sys.argv[0]), "PyQt4.uic.widget-plugins")
- uic.widgetPluginPath.append(path)
- 
-+# FIXME - intended to be sed'ed by unix install scripts
-+UNIX_WORKDIR = ""
-+
- # Are we running from a frozen interpreter?
- if getattr(sys, 'frozen', False):
-     os.chdir(os.path.dirname(sys.executable))
-@@ -44,6 +47,8 @@ else:
-         devRoot = os.path.abspath(os.path.join(srcDir, os.pardir))
-         os.chdir(devRoot)
-         # We need to set the working directory correctly.
-+    else:
-+        os.chdir(UNIX_WORKDIR)
- 
+@@ -50,6 +50,8 @@ else:
  import util
  if sys.platform == 'win32':
+     util.COMMON_DIR = os.path.join(os.getcwd(), "res")
++else:
++    os.chdir(util.COMMON_DIR)
+ 
+ # Set up crash reporting
+ excepthook_original = sys.excepthook
+diff --git a/src/util/__init__.py b/src/util/__init__.py
+index 1a2276e..072046d 100644
+--- a/src/util/__init__.py
++++ b/src/util/__init__.py
+@@ -25,11 +25,17 @@ LOGFILE_MAX_SIZE = 256 * 1024  #256kb should be enough for anyone
+ 
+ UNITS_PREVIEW_ROOT = "{}/faf/unitsDB/icons/big/".format(Settings.get('content/host'))
+ 
++# Allow for hardcoding res dir at install time
++UNIX_SHARE_DIR = ""
++
+ # On Windows the res dir is relative to the executable or main.py script
+ COMMON_DIR = os.path.join(os.getcwd(), "res")
+ if sys.platform != 'win32' and not os.path.exists(COMMON_DIR):
+-    #On Linux the res dir is installed as /usr/share/fafclient
+-    COMMON_DIR = os.path.join("/usr", "share", "fafclient")
++    #On Linux the default res dir is installed as /usr/share/fafclient
++    if UNIX_SHARE_DIR == "":
++        COMMON_DIR = os.path.join("/usr", "share", "fafclient")
++    else:
++        COMMON_DIR = UNIX_SHARE_DIR
+ 
+ # These directories are in Appdata (e.g. C:\ProgramData on some Win7 versions)
+ if 'ALLUSERSPROFILE' in os.environ:

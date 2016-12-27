@@ -43,23 +43,22 @@ RDEPEND="
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
 pkg_setup() {
-	distutils-r1_pkg_setup
-	git-r3_pkg_setup
 	export FAF_WORKDIR="/usr/share/games/fafclient"
 }
 
 src_prepare() {
 
 	epatch "${FILESDIR}"/${P}-scriptify-main.patch
-	epatch "${FILESDIR}"/${P}-hardcodable-workdir.patch
 	epatch "${FILESDIR}"/${P}-skip-lib-in-path.patch
+	epatch "${FILESDIR}"/${P}-hardcodable-workdir.patch
 
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?
 	rm -rf "${S}/tests"
 
 	# Hardcode the proper workdir
-	sed -i "s@UNIX_WORKDIR = \"\"@UNIX_WORKDIR = \"${FAF_WORKDIR}\"@" "${S}/src/__main__.py" || die
+	sed -i "s@UNIX_SHARE_DIR = \"\"@UNIX_SHARE_DIR = \"${FAF_WORKDIR}\"@" \
+		   "${S}/src/util/__init__.py" || die
 
 	# This is the name used in site-packages
 	mv "${S}/src" "${S}/fafclient"

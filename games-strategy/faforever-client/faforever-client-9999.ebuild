@@ -42,8 +42,6 @@ RDEPEND="
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
 pkg_setup() {
-	distutils-r1_pkg_setup
-	git-r3_pkg_setup
 	export FAF_WORKDIR="/usr/share/games/fafclient"
 }
 

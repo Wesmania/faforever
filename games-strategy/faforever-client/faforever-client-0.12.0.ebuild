@@ -55,7 +55,7 @@ src_prepare() {
 	rm -rf "${S}/tests"
 
 	# Hardcode the proper workdir
-	sed -i "s/UNIX_WORKDIR = \"\"/UNIX_WORKDIR=\"${FAF_WORKDIR}\"/" "${S}/src/__main__.py" || die
+	sed -i "s@UNIX_WORKDIR=\"\"@UNIX_WORKDIR=\"${FAF_WORKDIR}\"@" "${S}/src/__main__.py" || die
 
 	# This is the name used in site-packages
 	mv "${S}/src" "${S}/fafclient"

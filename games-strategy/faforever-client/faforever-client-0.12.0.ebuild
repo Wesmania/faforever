@@ -58,7 +58,7 @@ src_prepare() {
 
 	# Hardcode the proper workdir
 	sed -i "s@UNIX_SHARE_PATH = ''@UNIX_SHARE_PATH = '${FAF_WORKDIR}'@" \
-		   "${S}/src/config/path.py" || die
+		   "${S}/src/fafpath.py" || die
 
 	# This is the name used in site-packages
 	mv "${S}/src" "${S}/fafclient"

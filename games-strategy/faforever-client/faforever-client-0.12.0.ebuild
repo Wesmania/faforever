@@ -48,9 +48,9 @@ pkg_setup() {
 
 src_prepare() {
 
-	epatch "${FILESDIR}"/${P}-scriptify-main.patch
-	epatch "${FILESDIR}"/${P}-skip-lib-in-path.patch
-	epatch "${FILESDIR}"/${P}-hardcodable-workdir.patch
+	epatch "${FILESDIR}"/${P}-01scriptify-main.patch
+	epatch "${FILESDIR}"/${P}-02skip-lib-in-path.patch
+	epatch "${FILESDIR}"/${P}-03hardcodable-workdir.patch
 
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?

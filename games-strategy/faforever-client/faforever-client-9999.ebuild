@@ -47,7 +47,7 @@ pkg_setup() {
 
 src_prepare() {
 
-	epatch "${FILESDIR}"/${P}-scriptify-main.patch
+	epatch "${FILESDIR}"/${P}-01scriptify-main.patch
 
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?

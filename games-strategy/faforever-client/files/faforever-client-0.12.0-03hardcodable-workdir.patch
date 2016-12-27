@@ -1,5 +1,5 @@
 diff --git a/src/__main__.py b/src/__main__.py
-index 868a2b1..b16cf45 100644
+index 868a2b1..777e1b5 100644
 --- a/src/__main__.py
 +++ b/src/__main__.py
 @@ -47,16 +47,10 @@ from PyQt4 import QtGui, uic
@@ -16,18 +16,18 @@ index 868a2b1..b16cf45 100644
 -        devRoot = os.path.abspath(os.path.join(srcDir, os.pardir))
 -        os.chdir(devRoot)
 -        # We need to set the working directory correctly.
-+import config.path
++import fafpath
 +
 +# We need to set the working directory correctly.
-+os.chdir(config.path.get_workdir())
++os.chdir(fafpath.get_workdir())
  
  import util
  if sys.platform == 'win32':
-diff --git a/src/config/path.py b/src/config/path.py
+diff --git a/src/fafpath.py b/src/fafpath.py
 new file mode 100644
 index 0000000..28f6326
 --- /dev/null
-+++ b/src/config/path.py
++++ b/src/fafpath.py
 @@ -0,0 +1,36 @@
 +import os
 +import sys
@@ -66,14 +66,14 @@ index 0000000..28f6326
 +
 +__all__ = [get_workdir, get_resdir]
 diff --git a/src/util/__init__.py b/src/util/__init__.py
-index 1a2276e..5a9e5aa 100644
+index 1a2276e..210e566 100644
 --- a/src/util/__init__.py
 +++ b/src/util/__init__.py
 @@ -17,6 +17,7 @@ def developer():
      return sys.executable.endswith("python.exe")
  
  from config import VERSION as VERSION_STRING
-+import config.path
++import fafpath
  
  import logging
  logger = logging.getLogger(__name__)
@@ -86,7 +86,7 @@ index 1a2276e..5a9e5aa 100644
 -if sys.platform != 'win32' and not os.path.exists(COMMON_DIR):
 -    #On Linux the res dir is installed as /usr/share/fafclient
 -    COMMON_DIR = os.path.join("/usr", "share", "fafclient")
-+COMMON_DIR = config.path.get_resdir()
++COMMON_DIR = fafpath.get_resdir()
  
  # These directories are in Appdata (e.g. C:\ProgramData on some Win7 versions)
  if 'ALLUSERSPROFILE' in os.environ:

@@ -37,7 +37,7 @@ RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/trueskill[${PYTHON_USEDEP}]
 
-	dev-python/PyQt4[${PYTHON_USEDEP}]
+	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
 	dev-util/xdelta:3
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"

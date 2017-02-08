@@ -1,0 +1,19 @@
+diff --git a/src/client/updater.py b/src/client/updater.py
+index 924bc56..099a25c 100644
+--- a/src/client/updater.py
++++ b/src/client/updater.py
+@@ -21,11 +21,10 @@ class ClientUpdater(QObject):
+         self._rep = None
+ 
+     def exec_(self):
+-        result = QtGui.QMessageBox.question(None,
++        result = QtGui.QMessageBox.information(None,
+                                             "Update Needed",
+-                                            "Your version of FAF is outdated. You need to download and install the most recent version to connect and play.<br/><br/><b>Do you want to download and install the update now?</b><br/><br/><a href='https://github.com/FAForever/client/blob/develop/changelog.md'>See changes</a>",
+-                                            QtGui.QMessageBox.No,
+-                                            QtGui.QMessageBox.Yes)
++                                            "Your version of FAF is outdated. You need to install the most recent version to connect and play.<br/><br/>Check the faforever overlay for updates - if there are none, contact the maintainer or try emerging faforever-client-9999.",
++                                            QtGui.QMessageBox.Close)
+         if result == QtGui.QMessageBox.Yes:
+             self._setup_progress()
+             self._tmp = tempfile.NamedTemporaryFile(mode='w+b',

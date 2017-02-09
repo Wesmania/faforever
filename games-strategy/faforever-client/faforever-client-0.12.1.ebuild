@@ -16,7 +16,7 @@ EGIT_COMMIT="0.12.1"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 # TODO - figure out if we need pulseaudio/apulse

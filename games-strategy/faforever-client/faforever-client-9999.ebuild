@@ -12,6 +12,7 @@ inherit distutils-r1 git-r3
 DESCRIPTION="Community client for Supreme Commander: Forged Alliance"
 HOMEPAGE="https://faforever.com"
 EGIT_REPO_URI="git://github.com/FAForever/client.git"
+EGIT_BRANCH="develop"
 
 SLOT="0"
 LICENSE="GPL-3"
@@ -21,7 +22,7 @@ IUSE=""
 # TODO - figure out if we need pulseaudio/apulse
 # TODO - figure out if we need use flags from PyQt4
 RDEPEND="
-	=games-strategy/faftools-0.12[${PYTHON_USEDEP}]
+	=games-strategy/faftools-9999[${PYTHON_USEDEP}]
 	>=games-strategy/faf-uid-3.0.0
 
 	dev-python/bsdiff4[${PYTHON_USEDEP}]
@@ -36,7 +37,7 @@ RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/trueskill[${PYTHON_USEDEP}]
 
-	dev-python/PyQt4[${PYTHON_USEDEP}]
+	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
 	dev-util/xdelta:3
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -47,15 +48,19 @@ pkg_setup() {
 
 src_prepare() {
 
-	epatch "${FILESDIR}"/${P}-01scriptify-main.patch
+	epatch "${FILESDIR}"/${P}-01new-updater-message.patch
 
 	# No need to build tests
 	# FIXME - should it be dealt with more gracefully?
 	rm -rf "${S}/tests"
 
+	# Hardcode the proper workdir
+	sed -i "s@UNIX_SHARE_PATH = '/usr/share/fafclient'@UNIX_SHARE_PATH = '${FAF_WORKDIR}'@" \
+		   "${S}/src/fafpath.py" || die
+
 	# This is the name used in site-packages
 	mv "${S}/src" "${S}/fafclient"
-
+	echo "$(git describe --tags --always)" > res/RELEASE-VERSION
 }
 
 python_compile() {
@@ -79,8 +84,6 @@ pkg_postinst() {
 
 src_install() {
 	distutils-r1_src_install
-
-	echo ${PV} > res/RELEASE-VERSION
 	insinto ${FAF_WORKDIR}
 	doins -r res/*
 }

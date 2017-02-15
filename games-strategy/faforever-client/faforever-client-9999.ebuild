@@ -36,6 +36,7 @@ RDEPEND="
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/trueskill[${PYTHON_USEDEP}]
+	dev-python/semantic_version[${PYTHON_USEDEP}]
 
 	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
 	dev-util/xdelta:3

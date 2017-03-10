@@ -15,7 +15,7 @@ EGIT_BRANCH="develop"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="-*"
+KEYWORDS="-amd64"
 IUSE=""
 
 # TODO - figure out if we need pulseaudio/apulse

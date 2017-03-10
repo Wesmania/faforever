@@ -23,8 +23,8 @@ RDEPEND="
 DEPEND=""
 
 src_unpack() {
-	mkdir -p ${S}
-	cp "${DISTDIR}/${A}" ${S} || die
+	mkdir -p "${S}"
+	cp "${DISTDIR}/${A}" "${S}" || die
 }
 
 src_install() {

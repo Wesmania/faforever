@@ -22,7 +22,6 @@ RDEPEND="
 	!luajit? ( dev-lang/lua:0 )"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
-
 python_compile() {
 	if ! use luajit ; then
 		LUPA_FLAGS="--no-luajit"

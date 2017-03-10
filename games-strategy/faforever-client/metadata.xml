@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>ikotrasinsk@gmail.com</email>
+		<name>Igor Kotrasiński</name>
+	</maintainer>
+	<longdescription>
+		Community client for Supreme Commander: Forged Alliance
+	</longdescription>
+	<use>
+		<flag name="tests">Build dependencies necessary to run tests</flag>
+	</use>
+</pkgmetadata>

@@ -18,7 +18,7 @@ S="${WORKDIR}/client-${PV}"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64"
 IUSE="tests"
 #Don't check gentoo mirrors for FAF
 RESTRICT="mirror"

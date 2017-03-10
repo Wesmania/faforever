@@ -19,7 +19,7 @@ S="${WORKDIR}/client-${PV}"
 SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="amd64 x86"
-IUSE=""
+IUSE="tests"
 #Don't check gentoo mirrors for FAF
 RESTRICT="mirror"
 
@@ -41,6 +41,8 @@ RDEPEND="
 
 	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
 	dev-util/xdelta:3
+	tests? ( dev-python/pytest-qt[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 

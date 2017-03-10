@@ -17,7 +17,7 @@ EGIT_BRANCH="develop"
 SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="-*"
-IUSE=""
+IUSE="tests"
 
 # TODO - figure out if we need pulseaudio/apulse
 # TODO - figure out if we need use flags from PyQt4
@@ -40,6 +40,8 @@ RDEPEND="
 
 	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
 	dev-util/xdelta:3
+	tests? ( dev-python/pytest-qt[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 

@@ -8,7 +8,4 @@
 	<longdescription>
 		Community client for Supreme Commander: Forged Alliance
 	</longdescription>
-	<use>
-		<flag name="tests">Build dependencies necessary to run tests</flag>
-	</use>
 </pkgmetadata>

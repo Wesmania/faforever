@@ -10,7 +10,7 @@ SRC_URI="https://github.com/FAForever/uid/releases/download/v${PV}/faf-uid"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="amd64"
+KEYWORDS="-* amd64"
 IUSE=""
 
 # Used to generate the UID

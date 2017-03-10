@@ -20,7 +20,7 @@ S="${WORKDIR}/faftools-${GIT_COMMIT}"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~hppa ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 RESTRICT="mirror"
 

@@ -33,7 +33,10 @@ RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/werkzeug[${PYTHON_USEDEP}]
 	"
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/pip[${PYTHON_USEDEP}]
+	"
 
 src_prepare() {
 	# No need to build tests

@@ -6,14 +6,17 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 versionator
+MY_PV=$(replace_version_separator 3 '-')
+MY_PV=${MY_PV/rc/rc.}
+MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="Community client for Supreme Commander: Forged Alliance"
 HOMEPAGE="https://faforever.com"
-SRC_URI="https://github.com/FAForever/client/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/FAForever/client/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 
 # Package uses nonstandard name for the folder
-S="${WORKDIR}/client-${PV}"
+S="${WORKDIR}/client-${MY_PV}"
 
 SLOT="0"
 LICENSE="GPL-3"
@@ -23,20 +26,13 @@ IUSE=""
 RESTRICT="mirror"
 
 RDEPEND="
-	=games-strategy/faftools-0.12.1-r1[${PYTHON_USEDEP}]
-	>=games-strategy/faf-uid-3.0.0
+	>=games-strategy/faf-uid-4.0.4
 
-	dev-python/bsdiff4[${PYTHON_USEDEP}]
-	dev-python/enum34[${PYTHON_USEDEP}]
-	dev-python/lupa[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
+	virtual/python-enum34[${PYTHON_USEDEP}]
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
 	virtual/python-pathlib[${PYTHON_USEDEP}]
-	dev-python/ipaddress[${PYTHON_USEDEP}]
-	dev-python/py[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/trueskill[${PYTHON_USEDEP}]
+	dev-python/semantic_version[${PYTHON_USEDEP}]
 
 	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
 	dev-util/xdelta:3
@@ -60,15 +56,15 @@ src_prepare() {
 
 	# This is the name used in site-packages
 	mv "${S}/src" "${S}/fafclient"
-	echo "${PV}" > res/RELEASE-VERSION
+	echo "${MY_PV}" > res/RELEASE-VERSION
 }
 
 python_compile() {
-	FAFCLIENT_VERSION=${PV} distutils-r1_python_compile
+	FAFCLIENT_VERSION=${MY_PV} distutils-r1_python_compile
 }
 
 python_install() {
-	FAFCLIENT_VERSION=${PV} distutils-r1_python_install --optimize=1
+	FAFCLIENT_VERSION=${MY_PV} distutils-r1_python_install --optimize=1
 
 	python_scriptinto /usr/games/bin
 	python_newscript fafclient/__main__.py faforever-client

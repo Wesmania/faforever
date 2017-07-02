@@ -21,19 +21,11 @@ IUSE=""
 # TODO - figure out if we need pulseaudio/apulse
 # TODO - figure out if we need use flags from PyQt4
 RDEPEND="
-	=games-strategy/faftools-9999[${PYTHON_USEDEP}]
-	>=games-strategy/faf-uid-3.0.0
+	>=games-strategy/faf-uid-4.0.4
 
-	dev-python/bsdiff4[${PYTHON_USEDEP}]
-	dev-python/enum34[${PYTHON_USEDEP}]
-	dev-python/lupa[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
+	virtual/python-enum34[${PYTHON_USEDEP}]
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
 	virtual/python-pathlib[${PYTHON_USEDEP}]
-	dev-python/ipaddress[${PYTHON_USEDEP}]
-	dev-python/py[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/trueskill[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
 

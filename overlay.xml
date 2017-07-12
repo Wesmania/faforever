@@ -8,7 +8,7 @@
 			<email>ikotrasinsk@gmail.com</email>
 			<name>Igor Kotrasiński</name>
 		</owner>
-		<source type="git">git://github.com/Wesmania/faforever.git</source>
+		<source type="git">file:///home/igor/Dokumenty/faforever/</source>
 		<feed>https://github.com/Wesmania/faforever/commits/master.atom</feed>
 	</repo>
 </repositories>

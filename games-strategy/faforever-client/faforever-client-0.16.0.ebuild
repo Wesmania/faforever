@@ -13,14 +13,14 @@ MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="Community client for Supreme Commander: Forged Alliance"
 HOMEPAGE="https://faforever.com"
-SRC_URI="https://github.com/Wesmania/client/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+SRC_URI="https://github.com/FAForever/client/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 
 # Package uses nonstandard name for the folder
 S="${WORKDIR}/client-${MY_PV}"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE=""
 #Don't check gentoo mirrors for FAF
 RESTRICT="mirror"
@@ -29,7 +29,6 @@ RDEPEND="
 	>=games-strategy/faf-uid-4.0.4
 
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
-	dev-python/trueskill[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
 
 	dev-python/PyQt5[${PYTHON_USEDEP},webengine]

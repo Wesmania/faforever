@@ -23,10 +23,7 @@ IUSE=""
 RDEPEND="
 	>=games-strategy/faf-uid-4.0.4
 
-	virtual/python-enum34[${PYTHON_USEDEP}]
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
-	virtual/python-pathlib[${PYTHON_USEDEP}]
-	dev-python/trueskill[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
 
 	dev-python/PyQt4[${PYTHON_USEDEP},webkit]

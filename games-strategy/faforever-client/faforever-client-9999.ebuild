@@ -18,15 +18,13 @@ LICENSE="GPL-3"
 KEYWORDS="-amd64"
 IUSE=""
 
-# TODO - figure out if we need pulseaudio/apulse
-# TODO - figure out if we need use flags from PyQt4
 RDEPEND="
 	>=games-strategy/faf-uid-4.0.4
 
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
 
-	dev-python/PyQt4[${PYTHON_USEDEP},webkit]
+	dev-python/PyQt5[${PYTHON_USEDEP},webengine]
 	dev-util/xdelta:3
 	"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"

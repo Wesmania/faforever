@@ -4,7 +4,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python3_{4,5,6} )
+PYTHON_COMPAT=( python3_{4,5} )
 
 inherit distutils-r1 versionator
 MY_PV=$(replace_version_separator 3 '-')

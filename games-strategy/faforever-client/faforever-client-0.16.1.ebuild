@@ -29,6 +29,7 @@ RDEPEND="
 
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]
 
 	dev-python/PyQt5[${PYTHON_USEDEP},webengine]
 	dev-util/xdelta:3

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -22,6 +22,8 @@ RDEPEND="
 
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]
+	dev-python/jinja[${PYTHON_USEDEP}]
 
 	dev-python/PyQt5[${PYTHON_USEDEP},webengine]
 	dev-util/xdelta:3

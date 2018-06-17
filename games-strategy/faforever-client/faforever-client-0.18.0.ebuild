@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -29,6 +29,8 @@ RDEPEND="
 
 	virtual/python-ipaddress[${PYTHON_USEDEP}]
 	dev-python/semantic_version[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]
+	dev-python/jinja[${PYTHON_USEDEP}]
 
 	dev-python/PyQt5[${PYTHON_USEDEP},webengine]
 	dev-util/xdelta:3
@@ -67,7 +69,7 @@ python_install() {
 }
 
 pkg_postinst() {
-	if ! has_version "app-emulation/wine" ; then
+	if ! has_version "virtual/wine" ; then
 		elog "You need app-emulation/wine to run the game itself."
 		elog "You will still be able to chat and install mods/maps,"
 		elog "but you won't be able to join or host games."
